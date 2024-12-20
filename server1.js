@@ -2,7 +2,7 @@ const express = require("express");
 const puppeteer = require("puppeteer");
 
 const app = express();
-const PORT = 3000; // Define your port
+const PORT = process.env.PORT || 3000; // Use Render's dynamic port
 
 const cors = require("cors");
 app.use(cors());
@@ -11,9 +11,14 @@ app.use(cors());
 async function initializeBrowser() {
   return await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+    ],
+    cacheDirectory: process.env.PUPPETEER_CACHE_DIR || "/tmp/puppeteer_cache",
   });
 }
+
 
 // Ocado Scraper
 async function scrapeOcado(url) {
