@@ -1,7 +1,18 @@
 {
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "A web scraper service",
+  "main": "server1.js",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "puppeteer": "^23.11.1"
+  },
+  "scripts": {
+    "start": "node server1.js"
+  },
+  "engines": {
+    "node": ">=16"
   }
+
 }
