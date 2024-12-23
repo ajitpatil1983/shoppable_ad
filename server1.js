@@ -7,14 +7,11 @@ const PORT = process.env.PORT || 3000; // Use Render's dynamic port
 const cors = require("cors");
 app.use(cors());
 
-console.log('Cache Path:', process.env.PUPPETEER_CACHE_DIR || 'Default path not set');
-
 // Helper function to initialize Puppeteer
 async function initializeBrowser() {
   return await puppeteer.launch({
-    executablePath: '/opt/render/project/src/chrome/linux-131.0.6778.204/chrome-linux64/chrome',  // Make sure this is correct
     headless: false,
-    args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-gpu',],
+    args: ['--no-sandbox', '--disable-setuid-sandbox',],
   });
 }
 
