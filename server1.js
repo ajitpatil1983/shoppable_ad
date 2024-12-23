@@ -12,6 +12,7 @@ console.log('Cache Path:', process.env.PUPPETEER_CACHE_DIR || 'Default path not 
 // Helper function to initialize Puppeteer
 async function initializeBrowser() {
   return await puppeteer.launch({
+    executablePath: '/opt/render/project/src/chrome/linux-133.0.6913.0/chrome-linux64/chrome',  // Make sure this is correct
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
