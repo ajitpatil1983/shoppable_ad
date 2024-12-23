@@ -14,7 +14,7 @@ async function initializeBrowser() {
   return await puppeteer.launch({
     executablePath: '/opt/render/project/src/chrome/linux-131.0.6778.204/chrome-linux64/chrome',  // Make sure this is correct
     headless: false,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox','--disable-gpu',],
   });
 }
 
